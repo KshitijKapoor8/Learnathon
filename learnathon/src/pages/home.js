@@ -7,7 +7,7 @@ import {
   Jumbotron,
   Button,
 } from "react-bootstrap";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import { MDBFooter } from "mdbreact";
 import Mac from "../images/mac.jpg";
 function Home() {
   return (
@@ -24,7 +24,7 @@ function Home() {
         </Row>
         <Row>
           <Col>
-            <Jumbotron fluid>
+            <Jumbotron fluid className="jumbotron bg-brown text-dark">
               <h1>About Us</h1>
               <p>
                 This is a simple hero unit, a simple jumbotron-style component
@@ -36,21 +36,9 @@ function Home() {
         <Row>
           <Col>
             <MDBFooter color="brown">
-              <Container fluid>
-                <Row>
-                  <Col>
-                    <h5 className="title">Support</h5>
-                  </Col>
-                  <Col>
-                    <h5 className="title">Company</h5>
-                  </Col>
-                </Row>
-              </Container>
               <div className="footer-copyright text-center py-3">
-                <MDBContainer fluid>
-                  &copy; {new Date().getFullYear()} Copyright:{" "}
-                  <a href="https://www.mdbootstrap.com"> Pylearn </a>
-                </MDBContainer>
+                &copy; {new Date().getFullYear()} Copyright:{" "}
+                <a href="https://www.mdbootstrap.com"> Pylearn </a>
               </div>
             </MDBFooter>{" "}
           </Col>
