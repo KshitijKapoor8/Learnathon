@@ -18,8 +18,8 @@ function Login() {
       })
       .then((res) => {
         localStorage.setItem("userToken", res.data);
-        window.location = "/";
         localStorage.setItem("loggedin", true);
+        window.location = "/";
       })
       .catch((err) => {
         setError("There was an error with your email or password");

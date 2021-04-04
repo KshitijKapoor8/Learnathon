@@ -14,73 +14,58 @@ import {Link} from 'react-router-dom'
 import '../App.css';
 
 
-function LoggedIn()
-{
-    console.log(localStorage.getItem('loggedIn'));
-    if(localStorage.getItem('loggedIn'))
-    {
-        return(
-        <MDBNavbar color="black darken-3" fixed = "top" dark expand="md">
-          
-           <MDBNavbarNav left>
-                <MDBNavbarBrand href="/">
-                    <strong>Reacademy</strong>
-                </MDBNavbarBrand>
-                <MDBNavItem style = {{paddingLeft: '3rem'}}>
-                    <Link  to="/tutorial" style = {{color:'white'}}>
-                        Tutorial
-                    </Link>
-                </MDBNavItem>
-            </MDBNavbarNav>
-            <MDBNavbarNav right>
-                <MDBNavItem style = {{paddingLeft: '3rem'}}>
-                    <Link  to="/" onClick = {() => {
-                        localStorage.setItem('loggedIn', false)
-                        window.location.reload()
-                    }}style = {{color:'white'}}>
-                        Logout
-                    </Link>
-                </MDBNavItem>
-            </MDBNavbarNav>
-        </MDBNavbar>
-        )
-    } 
-    else
-    {
-        return(
-            <MDBNavbar color="black darken-3" fixed="top" dark expand="md">
-            <MDBNavbarNav left>
-                <MDBNavbarBrand href="/">
-                    <strong>Reacademy</strong>
-                </MDBNavbarBrand>
-            </MDBNavbarNav>
-            <MDBNavbarNav right>
-                <MDBNavItem >
-                    <Link to="/login" style = {{color:'white'}}>
-                        Login
-                    </Link>
-                </MDBNavItem>
-
-                <MDBNavItem style = {{paddingLeft: '3rem'}}>
-                    <Link  to="/signup" style = {{color:'white'}}>
-                        Sign Up
-                    </Link>
-                </MDBNavItem>
-            </MDBNavbarNav>
-        </MDBNavbar>
-            
-            
-        )
-    }
-}
-
-
 export default function Navbar(props) {
+  const [collapse, setCollapse] = useState(false);
+  const [isWideEnough, setIsWideEnough] = useState(false);
+
 
   return (
     <div>
       <header>
-        <LoggedIn/>
+        <MDBNavbar color="black darken-3" fixed="top" dark expand="md">
+          <MDBNavbarBrand href="/">
+            <strong>Reacademy</strong>
+          </MDBNavbarBrand>
+          {!isWideEnough && (
+            <MDBNavbarToggler onClick={() => setCollapse(!collapse)} />
+          )}
+          <MDBCollapse isOpen={collapse} navbar>
+            <MDBNavbarNav left>
+
+                {localStorage.getItem("loggedIn") ? <MDBNavItem style = {{paddingLeft: '3rem'}}>
+                    <Link  to="/tutorial" style = {{color:'white'}}>
+                        Tutorial
+                    </Link>
+                </MDBNavItem> : null}
+                
+            </MDBNavbarNav>
+            
+
+            <MDBNavbarNav right>
+                {localStorage.getItem("loggedIn") ? null :<MDBNavItem >
+                        <Link to="/login" style = {{color:'white'}}>
+                            Login
+                        </Link>
+                    </MDBNavItem>}
+
+                {localStorage.getItem("loggedIn") ? <MDBNavItem >
+                    <Link to="/" onClick = {() => {
+                        localStorage.setItem("loggedIn", false);
+                        console.log(localStorage.getItem("loggedIn"))
+                        window.location = "/";
+                    }} style = {{color:'white'}}>
+                        Logout
+                    </Link>
+                </MDBNavItem> : <MDBNavItem style = {{paddingLeft: '3rem'}}>
+                    <Link  to="/signup" style = {{color:'white'}}>
+                        Sign Up
+                    </Link>
+                </MDBNavItem>}
+            </MDBNavbarNav>
+          </MDBCollapse>
+        </MDBNavbar>
+
+        {props.renderContent}
       </header>
     </div>
   );

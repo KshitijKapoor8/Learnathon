@@ -9,7 +9,6 @@ export default function Tutorial() {
   const [tutorials, setTutorials] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
-  const []
 
   useEffect(() => {
     async function fetch() {
