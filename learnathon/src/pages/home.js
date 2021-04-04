@@ -79,6 +79,55 @@ function Home() {
           in a simple and straighforward way.
         </p>
       </Jumbotron>
+      <Jumbotron style={{ backgroundColor: "#FFFFFF" }} className="text-center">
+        <h1>Ready to Learn?</h1>
+        <Button variant="dark" href="/login">
+          Login
+        </Button>{" "}
+        <Button variant="dark" href="/signup">
+          Sign Up
+        </Button>{" "}
+      </Jumbotron>
+      <Jumbotron style={{ backgroundColor: "#2E2E2E", color: "#FFFFFF" }}>
+        <Container fluid className="text-center">
+          <Row>
+            <Col s>
+              <h5 className="text-center">Company</h5>
+              <ul>
+                <li
+                  className="list-unstyled text-center"
+                  style={{ paddingRight: "3.7rem" }}
+                >
+                  <h9> About Us</h9>
+                </li>
+                <li
+                  className="list-unstyled text-center"
+                  style={{ paddingRight: "2.1rem" }}
+                >
+                  <h9> Privacy Policy</h9>
+                </li>
+              </ul>
+            </Col>
+            <Col>
+              <h5 className="title">Support</h5>
+              <ul>
+                <li
+                  className="list-unstyled text-center"
+                  style={{ paddingRight: "1.9rem" }}
+                >
+                  <h9> Contact Us</h9>
+                </li>
+                <li
+                  className="list-unstyled text-center"
+                  style={{ paddingRight: "2.3rem" }}
+                >
+                  <h9> Help/FAQ</h9>
+                </li>
+              </ul>
+            </Col>
+          </Row>
+        </Container>
+      </Jumbotron>
       <MDBFooter color="black">
         <div className="footer-copyright text-center py-3">
           <MDBContainer>

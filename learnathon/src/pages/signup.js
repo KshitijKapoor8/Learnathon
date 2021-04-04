@@ -24,7 +24,8 @@ function Signup() {
           username: username,
         })
         .then((res) => {
-          window.location = "/page";
+          window.location = "/tutorial";
+          localStorage.setItem("loggedin", true);
         })
         .catch((err) => {
           setError("There was an error with your email");
@@ -38,7 +39,13 @@ function Signup() {
     }
   };
   return (
-    <div style={{ paddingTop: "4rem" }}>
+    <div
+      style={{
+        paddingTop: "4rem",
+        backgroundColor: "#32354a",
+        height: "100vh",
+      }}
+    >
       <Form onSubmit={setData}>
         <Container fluid>
           <Row>
@@ -48,13 +55,16 @@ function Signup() {
           </Row>
           <Row>
             <Col sm={{ span: 4, offset: 4 }}>
-              <label style={{ fontSize: "2rem" }}> Sign Up </label>
+              <label style={{ fontSize: "2rem", color: "white" }}>
+                {" "}
+                Sign Up{" "}
+              </label>
             </Col>
           </Row>
           <Row>
             <Col sm={{ span: 4, offset: 4 }}>
               <Form.Group controlId="formGridUsername">
-                <Form.Label>Username</Form.Label>
+                <Form.Label style={{ color: "white" }}>Username</Form.Label>
                 <Form.Control
                   placeholder="Enter username"
                   onChange={(text) => {
@@ -67,7 +77,7 @@ function Signup() {
           <Row>
             <Col sm={{ span: 4, offset: 4 }}>
               <Form.Group controlId="formGridEmail">
-                <Form.Label>Email</Form.Label>
+                <Form.Label style={{ color: "white" }}>Email</Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="Enter email"
@@ -82,7 +92,7 @@ function Signup() {
           <Row>
             <Col sm={{ span: 4, offset: 4 }}>
               <Form.Group controlId="formGridPassword">
-                <Form.Label>Password</Form.Label>
+                <Form.Label style={{ color: "white" }}>Password</Form.Label>
                 <Form.Control
                   type="password"
                   placeholder="Password"
@@ -97,7 +107,9 @@ function Signup() {
           <Row>
             <Col sm={{ span: 4, offset: 4 }}>
               <Form.Group controlId="formGridConfirmPassword">
-                <Form.Label>Confirm Password</Form.Label>
+                <Form.Label style={{ color: "white" }}>
+                  Confirm Password
+                </Form.Label>
                 <Form.Control
                   type="password"
                   placeholder="Password"
@@ -115,6 +127,7 @@ function Signup() {
                   type="checkbox"
                   label="I agree to the Terms and Conditions"
                   onChange={() => setCheckbox(true)}
+                  style={{ color: "white" }}
                 />
               </Form.Group>
             </Col>
