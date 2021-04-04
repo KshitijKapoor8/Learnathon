@@ -24,7 +24,7 @@ function Home() {
         </Row>
         <Row>
           <Col>
-            <Jumbotron fluid className="jumbotron bg-brown text-dark">
+            <Jumbotron fluid className="jumbotron bg-dark text-white">
               <h1>About Us</h1>
               <p>
                 This is a simple hero unit, a simple jumbotron-style component
