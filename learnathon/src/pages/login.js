@@ -19,6 +19,7 @@ function Login() {
       .then((res) => {
         localStorage.setItem("userToken", res.data);
         window.location = "/";
+        localStorage.setItem("loggedin", true);
       })
       .catch((err) => {
         setError("There was an error with your email or password");
@@ -26,7 +27,13 @@ function Login() {
   };
 
   return (
-    <div style={{ paddingTop: "4rem" }}>
+    <div
+      style={{
+        paddingTop: "4rem",
+        backgroundColor: "#32354a",
+        height: "100vh",
+      }}
+    >
       <Form onSubmit={setData}>
         <Container fluid>
           <Row>
@@ -36,14 +43,17 @@ function Login() {
           </Row>
           <Row>
             <Col sm={{ span: 4, offset: 4 }}>
-              <label style={{ fontSize: "2rem" }}> Login </label>
+              <label style={{ fontSize: "2rem", color: "white" }}>
+                {" "}
+                Login{" "}
+              </label>
             </Col>
           </Row>
 
           <Row>
             <Col sm={{ span: 4, offset: 4 }}>
               <Form.Group controlId="formGridEmail">
-                <Form.Label>Email</Form.Label>
+                <Form.Label style={{ color: "white" }}>Email</Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="Enter email"
@@ -58,7 +68,7 @@ function Login() {
           <Row>
             <Col sm={{ span: 4, offset: 4 }}>
               <Form.Group controlId="formGridPassword">
-                <Form.Label>Password</Form.Label>
+                <Form.Label style={{ color: "white" }}>Password</Form.Label>
                 <Form.Control
                   type="password"
                   placeholder="Password"
