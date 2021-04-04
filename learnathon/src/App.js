@@ -6,12 +6,9 @@ import Content from './pages/content';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-<<<<<<< HEAD
 
-=======
 import Tutorial from './pages/tutorial'
 import Challenges from './pages/challenges'
->>>>>>> 523dd972423df7e2c40f587f1d2e6544bf07b23d
 
 function App() {
   return (
