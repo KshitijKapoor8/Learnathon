@@ -42,25 +42,18 @@ export default function Navbar(props) {
             
 
             <MDBNavbarNav right>
-                {localStorage.getItem("loggedIn") ? null :<MDBNavItem >
+               <MDBNavItem >
                         <Link to="/login" style = {{color:'white'}}>
                             Login
                         </Link>
-                    </MDBNavItem>}
+                </MDBNavItem>
 
-                {localStorage.getItem("loggedIn") ? <MDBNavItem >
-                    <Link to="/" onClick = {() => {
-                        localStorage.setItem("loggedIn", false);
-                        console.log(localStorage.getItem("loggedIn"))
-                        window.location = "/";
-                    }} style = {{color:'white'}}>
-                        Logout
-                    </Link>
-                </MDBNavItem> : <MDBNavItem style = {{paddingLeft: '3rem'}}>
+                
+                 <MDBNavItem style = {{paddingLeft: '3rem'}}>
                     <Link  to="/signup" style = {{color:'white'}}>
                         Sign Up
                     </Link>
-                </MDBNavItem>}
+                </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>
