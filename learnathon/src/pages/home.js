@@ -7,73 +7,38 @@ import {
   Jumbotron,
   Button,
 } from "react-bootstrap";
+import Navbar from '../components/navbar'
+import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import { MDBFooter } from "mdbreact";
 import Mac from "../images/mac.jpg";
+import pic1 from "../images/pic1.jpg"
 function Home() {
   return (
     <div>
-      <Container fluid>
-        <Row>
-          <Carousel>
-            <Carousel.Item>
-              <img className="d-block w-100" src={Mac} height="900" />
-            </Carousel.Item>
-          </Carousel>
-        </Row>
-        <Row>
-          <Jumbotron
-            fluid
-            className="jumbotron bg-white text-dark"
-            style={{ width: "100%" }}
-          >
-            <h1>About Us</h1>
-            <p>
-              This is a simple hero unit, a simple jumbotron-style component for
-              calling extra attention to featured content or information.
-            </p>
-          </Jumbotron>
-        </Row>
-        <Row>
-          <Jumbotron
-            fluid
-            className="jumbotron  text-dark"
-            style={{ width: "100%", backgroundColor: "F1F1F1" }}
-          >
-            <h1>About Us</h1>
-            <p>
-              This is a simple hero unit, a simple jumbotron-style component for
-              calling extra attention to featured content or information.
-            </p>
-          </Jumbotron>
-        </Row>
-        <Row>
-          <Jumbotron
-            fluid
-            className="jumbotron bg-dark text-white"
-            style={{ width: "100%" }}
-          >
-            <h1>About Us</h1>
-            <p>
-              This is a simple hero unit, a simple jumbotron-style component for
-              calling extra attention to featured content or information.
-            </p>
-          </Jumbotron>
-        </Row>
-        <Row>
-          <footer
-            style={{
-              width: "100%",
-              backgroundColor: "#2E2E2E",
-              color: "white",
-            }}
-          >
-            <div className="footer-copyright text-center py-3">
-              &copy; {new Date().getFullYear()} Copyright:{" "}
-              <a href="https://www.mdbootstrap.com"> Pylearn </a>
+    <Navbar/>
+            <div style = {{ flexDirection:'column', color:'white', backgroundImage: `url(${pic1})`, width:'100%', height:'100vh', justifyContent:'center', alignItems:'center', display:'flex'}}>
+                <strong style = {{fontSize:48, paddingRight:'10rem'}}>
+                    PyLearn
+                </strong>
+
+                <div style = {{fontSize:36, paddingLeft:'2rem'}}>
+                    learn python easily
+                </div>
             </div>
-          </footer>{" "}
-        </Row>
-      </Container>
+            <Jumbotron >
+              <h1>About Us</h1>
+              <p>
+                PyLearn was created to help those who want to learn python in a simple and straighforward way.
+              </p>
+            </Jumbotron>
+            <MDBFooter color="black">
+              <div className="footer-copyright text-center py-3">
+                <MDBContainer >
+                  &copy; {new Date().getFullYear()} Copyright:{" "}
+                  <a href="https://www.mdbootstrap.com"> PyLearn </a>
+                </MDBContainer>
+              </div>
+            </MDBFooter>{" "}
     </div>
   );
 }
