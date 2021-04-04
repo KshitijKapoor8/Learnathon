@@ -3,43 +3,47 @@ import {Card, CardContent, Typography} from '@material-ui/core'
 import Navbar from '../components/navbar'
 import axios from 'axios'
 
-
-
+let tutorials = [1,2]
 
 export default function Tutorial() {
-
-    const [tutorials, setTutorials] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:5000/challenges/')
         .then(res => {
-            setTutorials((tutorials) => [...tutorials, res.data]);
+            tutorials = res;
         })
+
+
     }, [])
 
+
     return(
-        <div>
+        <div style = {{backgroundColor:'#32354a', display:'flex', height:'100vh', flexDirection:'column'}}>
+            
+
+
             {tutorials
             .map((tutorial => {
                 return(
-                    
-                    <div style = {{backgroundColor:'#32354a', display:'flex', height:'50vh', flexDirection:'column'}}>
-                        <Navbar style = {{display:'flex'}}/>
-                        {console.log(tutorial)}
-
                         <div style = {{display:'flex', height:'9rem'}}>
                             <Card style = {{display:'flex'}}>
                                 <CardContent>
                                     <Typography>
-                                         {tutorial.title}
+                                        Lesson 1
                                     </Typography>
                                 </CardContent>
                             </Card>
                         </div>
-                        
-                    </div>
                 )
             }))}
         </div>
+
+        
+
     )
+       
+
+
+        
+
 }
