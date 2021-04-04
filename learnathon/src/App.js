@@ -5,6 +5,8 @@ import Home from "./pages/home";
 import Content from './pages/content';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function App() {
   return (

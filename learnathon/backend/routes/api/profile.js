@@ -32,7 +32,7 @@ const s3 = new aws.S3({
      }
     }),
     limits:{ fileSize: 20000000 }, // In bytes: 2000000 bytes = 2 MB
-   }).single('python');
+   }).single('image');
   
    function checkFileType( file, cb ){
     // Allowed ext
