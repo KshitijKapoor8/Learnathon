@@ -4,9 +4,7 @@ import AceEditor from "react-ace";
 
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/theme-github";
-import {UnControlled as CodeMirror} from 'react-codemirror2'
-require('codemirror/mode/python/python');
-require('codemirror/mode/javascript/javascript');
+
 
 
 
