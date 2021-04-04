@@ -10,54 +10,34 @@ import {
 import Navbar from '../components/navbar'
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import Mac from "../images/mac.jpg";
+import pic1 from "../images/pic1.jpg"
 function Home() {
   return (
     <div>
     <Navbar/>
-      <Container fluid>
-        <Row>
-          <Col>
-            <Carousel>
-              <Carousel.Item>
-                <img className="d-block w-100" src={Mac} height="900" />
-              </Carousel.Item>
-            </Carousel>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Jumbotron fluid>
+            <div style = {{ flexDirection:'column', color:'white', backgroundImage: `url(${pic1})`, width:'100%', height:'100vh', justifyContent:'center', alignItems:'center', display:'flex'}}>
+                <strong style = {{fontSize:48, paddingRight:'10rem'}}>
+                    PyLearn
+                </strong>
+
+                <div style = {{fontSize:36, paddingLeft:'2rem'}}>
+                    learn python easily
+                </div>
+            </div>
+            <Jumbotron >
               <h1>About Us</h1>
               <p>
-                This is a simple hero unit, a simple jumbotron-style component
-                for calling extra attention to featured content or information.
+                PyLearn was created to help those who want to learn python in a simple and straighforward way.
               </p>
             </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <MDBFooter color="brown">
-              <Container fluid>
-                <Row>
-                  <Col>
-                    <h5 className="title">Support</h5>
-                  </Col>
-                  <Col>
-                    <h5 className="title">Company</h5>
-                  </Col>
-                </Row>
-              </Container>
+            <MDBFooter color="black">
               <div className="footer-copyright text-center py-3">
-                <MDBContainer fluid>
+                <MDBContainer >
                   &copy; {new Date().getFullYear()} Copyright:{" "}
-                  <a href="https://www.mdbootstrap.com"> Pylearn </a>
+                  <a href="https://www.mdbootstrap.com"> PyLearn </a>
                 </MDBContainer>
               </div>
             </MDBFooter>{" "}
-          </Col>
-        </Row>
-      </Container>
     </div>
   );
 }
