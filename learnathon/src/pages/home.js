@@ -81,10 +81,10 @@ function Home() {
       </Jumbotron>
       <Jumbotron style={{ backgroundColor: "#FFFFFF" }} className="text-center">
         <h1>Ready to Learn?</h1>
-        <Button variant="primary" href="/login">
+        <Button variant="dark" href="/login">
           Login
         </Button>{" "}
-        <Button variant="primary" href="/signup">
+        <Button variant="dark" href="/signup">
           Sign Up
         </Button>{" "}
       </Jumbotron>
