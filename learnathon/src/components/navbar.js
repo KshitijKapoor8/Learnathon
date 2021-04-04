@@ -14,6 +14,11 @@ import {Link} from 'react-router-dom'
 import '../App.css';
 
 
+function LoggedIn()
+{
+    
+}
+
 
 export default function Navbar(props) {
   const [collapse, setCollapse] = useState(false);
@@ -25,7 +30,7 @@ export default function Navbar(props) {
   return (
     <div>
       <header>
-        <MDBNavbar color="grey darken-3" fixed="top" dark expand="md">
+        <MDBNavbar color="black darken-3" fixed="top" dark expand="md">
           <MDBNavbarBrand href="/">
             <strong>PyLearn</strong>
           </MDBNavbarBrand>
@@ -34,22 +39,30 @@ export default function Navbar(props) {
           )}
           <MDBCollapse isOpen={collapse} navbar>
             <MDBNavbarNav left>
-                <MDBNavItem style = {{}}>
-                    Learn
+                <MDBNavItem style = {{paddingLeft:'3rem'}}>
+                    <Link to="/challenges" style = {{color:'white'}}>
+                        Challenges
+                    </Link>
+                </MDBNavItem>
+
+                <MDBNavItem style = {{paddingLeft: '3rem'}}>
+                    <Link  to="/tutorial" style = {{color:'white'}}>
+                        Tutorial
+                    </Link>
                 </MDBNavItem>
             </MDBNavbarNav>
             
 
             <MDBNavbarNav right>
-                <MDBNavItem href = "/login" >
+                <MDBNavItem >
                     <Link to="/login" style = {{color:'white'}}>
-                            <i class="fas fa-sign-in-alt"></i> Login
+                        Login
                     </Link>
                 </MDBNavItem>
 
-                <MDBNavItem href = "/signup" style = {{paddingLeft: '3rem'}}>
+                <MDBNavItem style = {{paddingLeft: '3rem'}}>
                     <Link  to="/signup" style = {{color:'white'}}>
-                        <i class="fas fa-user-plus"></i> Sign Up
+                        Sign Up
                     </Link>
                 </MDBNavItem>
             </MDBNavbarNav>

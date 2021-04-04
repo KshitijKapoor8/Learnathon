@@ -6,6 +6,8 @@ import Home from "./pages/home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Tutorial from './pages/tutorial'
+import Challenges from './pages/challenges'
 
 function App() {
   return (
