@@ -19,6 +19,7 @@ function Login() {
       .then((res) => {
         localStorage.setItem("userToken", res.data);
         window.location = "/";
+        localStorage.setItem("loggedIn", true)
       })
       .catch((err) => {
         setError("There was an error with your email or password");

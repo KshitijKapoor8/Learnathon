@@ -16,43 +16,44 @@ import '../App.css';
 
 function LoggedIn()
 {
-
-}
-
-
-export default function Navbar(props) {
-  const [collapse, setCollapse] = useState(false);
-  const [isWideEnough, setIsWideEnough] = useState(false);
-
-
-
-
-  return (
-    <div>
-      <header>
-        <MDBNavbar color="black darken-3" fixed="top" dark expand="md">
-          <MDBNavbarBrand href="/">
-            <strong>Reacademy</strong>
-          </MDBNavbarBrand>
-          {!isWideEnough && (
-            <MDBNavbarToggler onClick={() => setCollapse(!collapse)} />
-          )}
-          <MDBCollapse isOpen={collapse} navbar>
-            <MDBNavbarNav left>
-                <MDBNavItem style = {{paddingLeft:'3rem'}}>
-                    <Link to="/challenges" style = {{color:'white'}}>
-                        Challenges
-                    </Link>
-                </MDBNavItem>
-
+    console.log(localStorage.getItem('loggedIn'));
+    if(localStorage.getItem('loggedIn'))
+    {
+        return(
+        <MDBNavbar color="black darken-3" fixed = "top" dark expand="md">
+          
+           <MDBNavbarNav left>
+                <MDBNavbarBrand href="/">
+                    <strong>Reacademy</strong>
+                </MDBNavbarBrand>
                 <MDBNavItem style = {{paddingLeft: '3rem'}}>
                     <Link  to="/tutorial" style = {{color:'white'}}>
                         Tutorial
                     </Link>
                 </MDBNavItem>
             </MDBNavbarNav>
-            
-
+            <MDBNavbarNav right>
+                <MDBNavItem style = {{paddingLeft: '3rem'}}>
+                    <Link  to="/" onClick = {() => {
+                        localStorage.setItem('loggedIn', false)
+                        window.location.reload()
+                    }}style = {{color:'white'}}>
+                        Logout
+                    </Link>
+                </MDBNavItem>
+            </MDBNavbarNav>
+        </MDBNavbar>
+        )
+    } 
+    else
+    {
+        return(
+            <MDBNavbar color="black darken-3" fixed="top" dark expand="md">
+            <MDBNavbarNav left>
+                <MDBNavbarBrand href="/">
+                    <strong>Reacademy</strong>
+                </MDBNavbarBrand>
+            </MDBNavbarNav>
             <MDBNavbarNav right>
                 <MDBNavItem >
                     <Link to="/login" style = {{color:'white'}}>
@@ -66,10 +67,20 @@ export default function Navbar(props) {
                     </Link>
                 </MDBNavItem>
             </MDBNavbarNav>
-          </MDBCollapse>
         </MDBNavbar>
+            
+            
+        )
+    }
+}
 
-        {props.renderContent}
+
+export default function Navbar(props) {
+
+  return (
+    <div>
+      <header>
+        <LoggedIn/>
       </header>
     </div>
   );

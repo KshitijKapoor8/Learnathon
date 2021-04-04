@@ -2,16 +2,6 @@ import React from "react";
 import { render } from "react-dom";
 import AceEditor from "react-ace";
 
-<<<<<<< HEAD
-import "ace-builds/src-noconflict/mode-java";
-import "ace-builds/src-noconflict/theme-github";
-
-
-
-
-
-=======
->>>>>>> e70cdb5cd64b95db4ea18357e9ad1c6f6a58eca4
 // // Render editor
 // render(
 //   <AceEditor
