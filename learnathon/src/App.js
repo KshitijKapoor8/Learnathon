@@ -1,15 +1,19 @@
-import './App.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css'; 
-import 'mdbreact/dist/css/mdb.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import Login from "./pages/login";
+import Signup from "./pages/signup";
+import Home from "./pages/home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from './pages/home'
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path = '/' component = {Home} />
+        <Route path="/" component={Home} exact />
+        <Route path="/login" component={Login} exact />
+        <Route path="/signup" component={Signup} exact />
       </Switch>
     </Router>
   );
