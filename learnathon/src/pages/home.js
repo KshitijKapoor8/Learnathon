@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap";
 import Navbar from '../components/navbar'
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import { MDBFooter } from "mdbreact";
 import Mac from "../images/mac.jpg";
 import pic1 from "../images/pic1.jpg"
 function Home() {
