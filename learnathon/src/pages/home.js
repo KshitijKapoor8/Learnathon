@@ -8,8 +8,7 @@ import {
   Button,
 } from "react-bootstrap";
 import Navbar from "../components/navbar";
-import { MDBCol, MDBContainer, MDBRow } from "mdbreact";
-import { MDBFooter } from "mdbreact";
+import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import Mac from "../images/mac.jpg";
 import pic1 from "../images/pic1.jpg";
 import Modal from "../components/modal";
@@ -65,69 +64,26 @@ function Home() {
           display: "flex",
         }}
       >
-        <strong style={{ fontSize: 48, paddingRight: "10rem" }}>PyLearn</strong>
+        <strong style={{ fontSize: 48, paddingRight: "10rem" }}>
+          Reacademy
+        </strong>
 
         <div style={{ fontSize: 36, paddingLeft: "2rem" }}>
-          learn python easily
+          learn ReactJS easily
         </div>
       </div>
-      <Jumbotron className="text-center">
-        <h1>About Us</h1>
+      <Jumbotron>
+        <h1>What We Do</h1>
         <p>
-          PyLearn was created to help those who want to learn python in a simple
-          and straighforward way.
+          Reacademy was created to help those who want to learn web development
+          in a simple and straighforward way.
         </p>
       </Jumbotron>
-      <Jumbotron style={{ backgroundColor: "#FFFFFF" }} className="text-center">
-        <h1>Ready To Learn?</h1>
-      </Jumbotron>
-      <Jumbotron fluid style={{ backgroundColor: "#2E2E2E", color: "white" }}>
-        <Container fluid className="text-center ">
-          <Row>
-            <Col>
-              <h5 className="title">Company</h5>{" "}
-              <ul className="text-center ">
-                <li className="">
-                  <h9 className="title">About Us</h9>
-                </li>
-                <li className="">
-                  <h9 className="title">Cool Blog</h9>{" "}
-                </li>
-                <li className="">
-                  <h9 className="title">Privacy Policy</h9>{" "}
-                </li>
-                <li className="">
-                  <h9 className="title">Copyright Policy</h9>{" "}
-                </li>
-              </ul>
-            </Col>
-            <Col>
-              <h5 className="title">Support</h5>{" "}
-              <ul className="text-center ">
-                <li className="">
-                  <h9 className="title">Contuct Us</h9>
-                </li>
-                <li className="">
-                  <h9 className="title">Help/FAQ</h9>{" "}
-                </li>
-              </ul>
-            </Col>
-          </Row>
-        </Container>
-      </Jumbotron>
-      <Button
-        variant="primary"
-        onClick={(event) => {
-          handleDialogOpen();
-        }}
-      >
-        Primary
-      </Button>{" "}
-      <MDBFooter style={{ backgroundColor: "#2E2E2E", color: "white" }}>
+      <MDBFooter color="black">
         <div className="footer-copyright text-center py-3">
           <MDBContainer>
             &copy; {new Date().getFullYear()} Copyright:{" "}
-            <a href="https://www.mdbootstrap.com"> PyLearn </a>
+            <a href="https://www.mdbootstrap.com"> Reacademy </a>
           </MDBContainer>
         </div>
       </MDBFooter>{" "}

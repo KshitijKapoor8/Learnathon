@@ -22,7 +22,7 @@ router.route('/add').post((req, res) => {
   const body = req.body.body;
   const output = req.body.output;
 
-  const newC = new User({title, body, output});
+  const newC = new Challenge({title, body, output});
 
   newC.save()
     .then(() => res.json('Added!'))

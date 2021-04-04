@@ -16,7 +16,7 @@ import '../App.css';
 
 function LoggedIn()
 {
-    
+
 }
 
 
@@ -32,7 +32,7 @@ export default function Navbar(props) {
       <header>
         <MDBNavbar color="black darken-3" fixed="top" dark expand="md">
           <MDBNavbarBrand href="/">
-            <strong>PyLearn</strong>
+            <strong>Reacademy</strong>
           </MDBNavbarBrand>
           {!isWideEnough && (
             <MDBNavbarToggler onClick={() => setCollapse(!collapse)} />
